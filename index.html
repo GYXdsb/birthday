@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>生日快乐 🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .cad {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .name {
+      color: #ff6f61;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      border: none;
+      border-radius; 30px;
+      background: #ff6f61;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎉 生日快乐 🎉</h1>
+    <p>
+      辛苦了， <span class="name" id="name">老爸</span>: <br /><br />
+      感谢您一直以来的操劳，
+      用汗水撑起这个家。 <br />
+      在今天这个特殊的日子里，
+      祝老爸生日快乐，身体健康，<br />
+      天天开心 🌸
+    </p>
+
+    <button onclick="changeMessage()">点我一下 🎁</button>
+
+    <div class="footer">Made with ❤️</div>
+  </div>
+
+  <script>
+    // 从网址参数中读取名字，例如 ？name=小明
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    if (name) {
+      document.getElementById("name").textContent = name;
+    }
+
+    function changeMessage() {
+      alert("🎂 生日快乐！🎂“);
+            }
+            </script>
+</body>
+</html>
